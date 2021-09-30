@@ -1,0 +1,98 @@
+/* .container-fluid{
+    height:75%;
+    width:30%;
+    border:1px solid black;
+    margin-top:20px;
+    border-radius:12px;
+    box-shadow: 1px 3px;
+}
+
+.col-md-4{
+    margin-top:40px;
+}
+
+.col-md-6{
+    margin-top:10%;
+}
+
+.col-md-12{
+    margin-top:5%;
+}
+
+
+#day{
+    width:30%;
+    margin-left: 10px;
+}
+
+#month{
+    width:30%;
+    height:40%;
+    
+    margin-left: 10px;
+}
+#year{
+    width:30%;
+    
+    margin-left: 10px;
+}
+
+h5{ 
+    margin-top:5%;
+    font-family: bold;
+    font-size:12px;
+}
+ h6{ 
+     font-size:12px;
+     margin-top:5px;
+     
+ }
+
+ #input1{
+     
+     border:5px solid black;
+
+ }
+
+ #btn1{
+     width:100px;
+     height : 40px;
+     font-size: 20px;
+     background-color : skyblue;
+     border-radius:12px;
+     margin-left:120px;
+ }
+*/
+
+
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+  }
+
+  #g{
+      font-size:15px;
+  }
+
+  .card{
+    width:40%;
+    height:80%;
+    
+    margin-left:35%;
+    /* height : 40px; */
+    background:rgba(255, 255, 255, 0.767);
+    border-radius: 20px;
+    
+   
+    
+    
+}
+
+#btn{
+    margin-top:10px;
+    margin-left:130px;
+
+}
+
+p{
+    margin-top:10px;
+}

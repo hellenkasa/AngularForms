@@ -1,0 +1,147 @@
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-6">
+
+          <div class="class-group">
+            <mat-form-field>
+              <mat-label>Firstname</mat-label>
+              <input type="text" class="inputs" matInput formControlName="firstName" required/>
+              <mat-error *ngIf="firstName.touched && firstName.invalid" style="color:red">
+                <div *ngIf="firstName.errors.required">First Name required</div>
+                <div *ngIf="firstName.errors.minlength">Enter minimum 5 characters</div>
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+        </div>
+
+        <div class="col-6">
+          <div class="class-group">
+            <mat-form-field>
+              <mat-label>Lastname</mat-label>
+              <input type="text" matInput formControlName="lastName" required />
+              <mat-error *ngIf="lastName.touched && lastName.invalid" style="color:red">
+                <div *ngIf="lastName.errors.required">Last Name required</div>
+                <div *ngIf="lastName.errors.minLength">Enter minimum 5 characters</div>
+              </mat-error>
+            </mat-form-field>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 class-group">
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input type="text" matInput formControlName="emailAdrress" required />
+        </mat-form-field>
+      </div>
+
+
+    
+
+      <!-- <h4>Address : </h4> -->
+      <div formGroupName="address">
+        <div class="row">
+          <div class="col-md-6">
+            <mat-form-field>
+              <mat-label>Street:</mat-label>
+              <input type="text" matInput formControlName="street" placeholder="Enter Street"><br><br>
+
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field>
+              <mat-label>City:</mat-label>
+              <input type="text" matInput formControlName="city" placeholder="Enter City"><br><br>
+
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <mat-form-field>
+              <mat-label>State:</mat-label>
+              <input type="text" matInput formControlName="state" placeholder="Enter State"><br><br>
+
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-6">
+            <mat-form-field>
+              <mat-label>Pincode:</mat-label>
+              <input type="text" matInput formControlName="pincode" placeholder="Enter Pincode"><br><br>
+              <mat-error *ngIf="pincode.touched && pincode.invalid" style="color:red">
+                <div *ngIf="pincode.errors.required">Enter Pincode</div>
+                <div *ngIf="pincode.errors.minlength">Enter minimum 6 numbers</div>
+                <div *ngIf="pincode.errors.maxlength">Enter maximum 6 numbers</div>
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="class-group">
+        <mat-form-field>
+          <mat-label>Username</mat-label>
+          <input type="text" matInput formControlName="userName" class="form-control" />
+        </mat-form-field>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="class-group">
+            <mat-form-field>
+              <mat-label>Password</mat-label>
+              <input type="text" matInput formControlName="password" class="form-control" />
+
+              <mat-error *ngIf="password.touched && password.invalid" style="color:red">
+                <div *ngIf="password.errors.required">Password is required</div>
+                <div *ngIf="password.errors.minlength">Enter minimum 6 digits</div>
+                <div *ngIf="password.errors.pattern">Enter only numbers</div>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="class-group">
+            <mat-form-field>
+              <mat-label>ConfirmPassword</mat-label>
+              <input type="text" matInput formControlName="confirmPassword" class="form-control" />
+              <!-- <mat-error *ngIf="confirmPassword.touched && confirmPassword.invalid" style="color:red"> -->
+                <mat-error  style="color:red" *ngIf="confirmPassword.errors.required && confirmPassword.touched">Confirm Password Required</mat-error>
+                <mat-error  style="color:red" *ngIf="registrationForm.get('password').value !== registrationForm.get('confirmPassword').value">
+                  Password Do not match working</mat-error>
+
+              <!-- </mat-error> -->
+            </mat-form-field>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="class-group">
+        <h4>Gender</h4>
+        <mat-radio-group formControlName="gender">
+          <mat-radio-button value="male">Male</mat-radio-button>
+          <mat-radio-button  value="female">Female</mat-radio-button>
+          <mat-radio-button  value="other">Other</mat-radio-button>
+        </mat-radio-group>
+      </div> -->
+
+      <div class="class-group">
+        <button mat-raised-button color="primary" id="btn">Sign Up</button>
+      </div>
+
+      <!-- <h7>By signing up, you agree to our Terms, Data Policy and Cookie Policy.</h7> -->
+      <router-outlet></router-outlet>
+    </form>
+  </div>
+</div>
